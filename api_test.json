@@ -1,0 +1,185 @@
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a961471b-0617-4bd5-9cdf-58f3897991ae",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -512,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 1,
+        "filters": {}
+      },
+      "id": "f6daf7e1-d39e-49a0-96bc-ec227b8c1fcd",
+      "name": "Test Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -128,
+        -96
+      ],
+      "webhookId": "9181d037-a4bd-40e2-9ebb-d6c028b5d22d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "DLwEuCXqcIxAfYlX",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "name": "Test OAuth Video",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "id": "5ffed711-23d0-4f40-b0ef-c6517ab53603",
+      "name": "Test Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        96,
+        32
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Q6xu2tahNf15ONvA",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "primary",
+          "mode": "list",
+          "cachedResultName": "Primary"
+        },
+        "limit": 5,
+        "options": {}
+      },
+      "id": "15c30ee2-60f1-40a6-b06c-4afd84184b15",
+      "name": "Test Google Calendar",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.2,
+      "position": [
+        128,
+        224
+      ],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "ijyFAkajMHPJz9ZQ",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "spreadsheet",
+        "title": "Test OAuth - Sheets Funcionando",
+        "options": {}
+      },
+      "id": "e6b0cff4-45dc-41fc-9fcd-6e7414f0c9d0",
+      "name": "Test Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -32,
+        416
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "BzUrR1X7F2YUfZph",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "task": "MTc1MjQ1MTQxMjczNTUzMDg1MDE6MDow",
+        "limit": 5,
+        "additionalFields": {}
+      },
+      "id": "172ca835-d17a-45d4-9db1-27ce3f224d0f",
+      "name": "Test Google Tasks",
+      "type": "n8n-nodes-base.googleTasks",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        464
+      ],
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "Ze4k4TBR1JOJKbWc",
+          "name": "Google Tasks account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Test Gmail",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test Google Drive",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test Google Calendar",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test Google Sheets",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test Google Tasks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "4d1dffc7-db4a-4db1-b981-cd085fe73504",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f2458bb89e18dd496fd1c5aae169975f02530afb748e397f25dce71dafb2f234"
+  },
+  "id": "5JQd8WhaVPa5JqDM",
+  "tags": []
+}
