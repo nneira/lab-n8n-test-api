@@ -2,6 +2,8 @@
 
 Workflow de prueba para verificar que tus credenciales OAuth 2.0 están correctamente configuradas en n8n.
 
+**Suscríbete en:** https://www.youtube.com/@nicolasneiragarcia?sub_confirmation=1
+
 **Video tutorial completo:** [Cómo conectar n8n con Google Drive, Sheets, Calendar (OAuth 2.0)] https://www.youtube.com/watch?v=mndPg8wGVNQ
 
 ---
